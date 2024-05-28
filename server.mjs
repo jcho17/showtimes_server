@@ -5,6 +5,8 @@ import cors from 'cors';
 const app = express();
 const port = process.env.PORT || 3000; // Use the provided port or default to 3000
 app.use(cors());
+app.options('/proxy', cors());
+
 // CORS middleware
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
