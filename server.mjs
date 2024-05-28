@@ -1,9 +1,10 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 3000; // Use the provided port or default to 3000
-
+app.use(cors());
 // CORS middleware
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
